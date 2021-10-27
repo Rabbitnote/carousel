@@ -1,0 +1,16 @@
+.arrow {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    transition: transfrom ease-in 0.1s;
+}
+.arrow:hover {
+    transform: scale(1.1);
+}
