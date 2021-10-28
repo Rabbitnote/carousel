@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../Styles/slider.css';
 import Slide from './slide';
 import Arrow from './Arrow';
+import Dots from './Dots';
 
 const Slider = props => {
     const getWidth = () => window.innerWidth;
@@ -19,6 +20,21 @@ const Slider = props => {
             ...state,
             activeIndex: activeIndex + 1,
             translate: (activeIndex + 1) * getWidth()
+        });
+    };
+    const clickDot = index => {
+        console.log(index);
+        return setState({
+            ...state,
+            activeIndex: index,
+            translate: index * getWidth()
+        });
+    };
+    const changeSlide = index => {
+        setState({
+            ...state,
+            activeIndex: index,
+            translate: (index) * getWidth()
         });
     };
     const prevSlide = () => {
@@ -51,6 +67,11 @@ const Slider = props => {
             </div>
             <Arrow direction='left' handlerClick={prevSlide} />
             <Arrow direction='right' handlerClick={nextSlide} />
+            <Dots
+                slides={props.slides}
+                activeIndex={activeIndex}
+                changeIndex={changeSlide}
+            />
         </div>
     );
 };
