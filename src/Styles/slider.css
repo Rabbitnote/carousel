@@ -5,3 +5,7 @@
     overflow: hidden;
     margin: 0 auto;
 }
+.sliderContent {
+    display: flex;
+    height: 100%;
+}
